@@ -2,6 +2,14 @@ import type { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import { JWT_PASSWORD } from "./config.js";
 
+// declare global {
+//   namespace Express {
+//     interface Request {
+//       userId?: string;
+//     }
+//   }
+// }
+
 export const userMiddleware = (
   req: Request,
   res: Response,
