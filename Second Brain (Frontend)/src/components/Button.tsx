@@ -5,6 +5,7 @@ interface ButtonProps {
   text: string;
   size: "sm" | "md" | "lg";
   startIcon?: ReactElement;
+  onClick?: () => void;
 }
 
 // type Variants = "primary" | "secondary";
@@ -20,13 +21,13 @@ const sizeStyles = {
     "lg": "py-4 px-6"
 }
 
-const defaultStyles = " px-4 py-2 rounded-md font-light flex items-center"
+const defaultStyles = "cursor-pointer px-4 py-2 rounded-md font-light flex items-center"
 
 
 
 export const Button = (props: ButtonProps) => {
   return (
-    <button className={ `${variantStyles[props.variant]} ${defaultStyles} ${sizeStyles[props.size]}` }>
+    <button onClick={props.onClick} className={ `${variantStyles[props.variant]} ${defaultStyles} ${sizeStyles[props.size]}` }>
       {props.startIcon ? <div className="pr-2"> {props.startIcon} </div> : null} {props.text}
     </button>
   );
