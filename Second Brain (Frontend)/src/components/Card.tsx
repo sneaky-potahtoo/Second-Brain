@@ -25,7 +25,7 @@ export function Card({ title, type, link }: CardProps) {
 
   return (
     <div>
-      <div className="p-4 bg-white rounded-md border-gray-200 max-w-96 border">
+      <div className="p-4 bg-white rounded-md border border-gray-200 max-w-96">
 
         <div className="flex justify-between">
           <div className="flex items-center text-md">

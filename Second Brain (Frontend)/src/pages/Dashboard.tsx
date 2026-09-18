@@ -21,12 +21,6 @@ function Dashboard() {
         />
         <div className="flex justify-end gap-4">
           <Button
-            startIcon={<ShareIcon size="md" />}
-            size="md"
-            variant="primary"
-            text="Share Brain"
-          />
-          <Button
             onClick={() => {
               setModalOpen(true);
             }}
@@ -34,6 +28,12 @@ function Dashboard() {
             size="md"
             variant="secondary"
             text="Add Content"
+          />
+          <Button
+            startIcon={<ShareIcon size="md" />}
+            size="md"
+            variant="primary"
+            text="Share Brain"
           />
         </div>
 
