@@ -1,8 +1,22 @@
+import { useRef, useState } from "react";
 import { CrossIcon } from "../icons/CrossIcon";
 import { Button } from "./Button";
+import { Input } from "./Input";
 
+enum ContentType {
+  Youtube = "youtube"
+}
 //controlled component
 export function CreateContentModal({ open, onClose }) {
+  const titleRef = useRef<HTMLInputElement>();
+  const linkRef = useRef<HTMLInputElement>();
+  const [type, setType] = useState(ContentType.Youtube);
+
+  function addContent() {
+    const title = titleRef.current?.value;
+    const link = linkRef.current?.value;
+  }
+
   return (
     <div>
       {open && (
@@ -12,30 +26,22 @@ export function CreateContentModal({ open, onClose }) {
               <span className="cursor-pointer" onClick={onClose}>
                 <CrossIcon />
               </span>
-            </div>
+            </div> 
             <div className="flex flex-col items-center">
               <div>
-                <Input placeholder="Title" />
-                <Input placeholder="Link" />
+                <Input reference={titleRef} placeholder="Title" />
+                <Input reference={linkRef} placeholder="Link" />
               </div>
-              <Button variant="primary" text="Submit" size="md" />
+              <div className="flex gap-1 p-4">
+                <Button text="Youtube" variant={type === ContentType.Youtube ? "primary" : "secondary"} onClick={() => {
+                  setType(ContentType.Youtube)
+                }} size="md"></Button>
+              </div>
+              <Button onClick={addContent} variant="primary" text="Submit" size="md" />
             </div>
           </div>
         </div>
       )}
-    </div>
-  );
-}
-
-function Input({ onChange, placeholder }: { onChange: () => void }) {
-  return (
-    <div>
-      <input
-        placeholder={placeholder}
-        type={"text"}
-        className="px-4 py-2 border  m-2"
-        onChange={onChange}
-      />
     </div>
   );
 }

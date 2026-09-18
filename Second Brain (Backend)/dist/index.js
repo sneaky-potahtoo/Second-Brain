@@ -5,8 +5,10 @@ import { UserModel, ContentModel, LinkModel } from "./db.js";
 import { JWT_PASSWORD } from "./config.js";
 import { userMiddleware } from "./middleware.js";
 import { random } from "./utils.js";
+import cors from "cors";
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.post("/api/v1/signup", async (req, res) => {
     const username = req.body.username;
     const password = req.body.password;

@@ -1,7 +1,7 @@
 import mongoose, { model, Schema } from "mongoose";
 
 mongoose.connect(
-  "mongodb+srv://Monke_G:@cluster0.gocdjty.mongodb.net/",
+  "mongodb+srv://Monke_G:@cluster0.gocdjty.mongodb.net/"
 );
 const UserSchema = new Schema({
   username: { type: String, unique: true },
