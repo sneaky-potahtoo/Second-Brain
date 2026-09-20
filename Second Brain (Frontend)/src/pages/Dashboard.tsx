@@ -6,9 +6,11 @@ import { Card } from "../components/Card";
 import { Sidebar } from "../components/Sidebar";
 import { CreateContentModal } from "../components/CreateContentModal";
 import { useState } from "react";
+import { useContent } from "../hooks/useContent";
 
 function Dashboard() {
   const [modalOpen, setModalOpen] = useState(false);
+  const contents = useContent();
   return (
     <>
       <Sidebar />
