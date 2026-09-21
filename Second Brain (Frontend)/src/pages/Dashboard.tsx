@@ -10,7 +10,8 @@ import { useContent } from "../hooks/useContent";
 
 function Dashboard() {
   const [modalOpen, setModalOpen] = useState(false);
-  const contents = useContent();
+  const { contents, refreshContent } = useContent();
+  
   return (
     <>
       <Sidebar />
@@ -18,7 +19,11 @@ function Dashboard() {
         <CreateContentModal
           open={modalOpen}
           onClose={() => {
+            setModalOpen(false)
+          }}
+          onContentAdded={() => {
             setModalOpen(false);
+            refreshContent();
           }}
         />
         <div className="flex justify-end gap-4">
@@ -39,12 +44,14 @@ function Dashboard() {
           />
         </div>
 
-        <div className="flex gap 4"></div>
-        <Card
-          title="Solidworks"
-          type="youtube"
-          link="https://www.youtube.com/watch?v=oZMtODonJKU&t=482s"
-        />
+        <div className="flex gap 4">
+          {contents.map(({ type, link, title }) => 
+            <Card
+              title={title}
+              type={type}
+              link={link}
+            />)}
+        </div>
       </div>
     </>
   );

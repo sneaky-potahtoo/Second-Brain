@@ -1,5 +1,5 @@
 import mongoose, { model, Schema } from "mongoose";
-mongoose.connect("mongodb+srv://Monke_G:fS!s7v!6Ld3.XaE@cluster0.gocdjty.mongodb.net/");
+mongoose.connect("mongodb+srv://Monke_G:fS!s7v!6Ld3.XaE@cluster0.gocdjty.mongodb.net/secondbrain");
 const UserSchema = new Schema({
     username: { type: String, unique: true },
     password: String,
@@ -8,6 +8,7 @@ export const UserModel = model("User", UserSchema);
 const ContentSchema = new Schema({
     title: String,
     link: String,
+    type: String,
     tags: [{ type: mongoose.Types.ObjectId, ref: 'Tag' }],
     userId: { type: mongoose.Types.ObjectId, ref: 'User', required: true }
 });

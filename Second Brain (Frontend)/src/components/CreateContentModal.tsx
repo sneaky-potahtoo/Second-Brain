@@ -8,10 +8,20 @@ import axios from "axios";
 enum ContentType {
   Youtube = "youtube"
 }
-//controlled component
-export function CreateContentModal({ open, onClose }) {
-  const titleRef = useRef<HTMLInputElement>();
-  const linkRef = useRef<HTMLInputElement>();
+
+interface CreateContentModalProps {
+  open: boolean;
+  onClose: () => void;
+  onContentAdded: () => void;
+}
+
+export function CreateContentModal({
+  open,
+  onClose,
+  onContentAdded,
+}: CreateContentModalProps) {
+  const titleRef = useRef<HTMLInputElement>(null);
+  const linkRef = useRef<HTMLInputElement>(null);
   const [type, setType] = useState(ContentType.Youtube);
 
   async function addContent() {
@@ -27,6 +37,8 @@ export function CreateContentModal({ open, onClose }) {
         "Authorization": localStorage.getItem("token")
       }
     })
+
+    onContentAdded();
   }
 
   return (

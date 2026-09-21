@@ -104,6 +104,7 @@ export declare const LinkModel: mongoose.Model<{
 export declare const ContentModel: mongoose.Model<{
     title?: string | null;
     link?: string | null;
+    type?: string | null;
     tags: mongoose.Types.ObjectId[];
     userId: mongoose.Types.ObjectId;
 }, {}, {}, {
@@ -111,6 +112,7 @@ export declare const ContentModel: mongoose.Model<{
 }, mongoose.Document<unknown, {}, {
     title?: string | null;
     link?: string | null;
+    type?: string | null;
     tags: mongoose.Types.ObjectId[];
     userId: mongoose.Types.ObjectId;
 }, {
@@ -118,6 +120,7 @@ export declare const ContentModel: mongoose.Model<{
 }, mongoose.DefaultSchemaOptions> & Omit<{
     title?: string | null;
     link?: string | null;
+    type?: string | null;
     tags: mongoose.Types.ObjectId[];
     userId: mongoose.Types.ObjectId;
 } & {
@@ -129,11 +132,13 @@ export declare const ContentModel: mongoose.Model<{
 }>, Schema<any, mongoose.Model<any, any, any, any, any, any, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, {
     title?: string | null;
     link?: string | null;
+    type?: string | null;
     tags: mongoose.Types.ObjectId[];
     userId: mongoose.Types.ObjectId;
 }, mongoose.Document<unknown, {}, {
     title?: string | null;
     link?: string | null;
+    type?: string | null;
     tags: mongoose.Types.ObjectId[];
     userId: mongoose.Types.ObjectId;
 }, {
@@ -141,6 +146,7 @@ export declare const ContentModel: mongoose.Model<{
 }, mongoose.DefaultSchemaOptions> & Omit<{
     title?: string | null;
     link?: string | null;
+    type?: string | null;
     tags: mongoose.Types.ObjectId[];
     userId: mongoose.Types.ObjectId;
 } & {
@@ -152,6 +158,7 @@ export declare const ContentModel: mongoose.Model<{
 }>, unknown, {
     title?: string | null;
     link?: string | null;
+    type?: string | null;
     tags: mongoose.Types.ObjectId[];
     userId: mongoose.Types.ObjectId;
 } & {
@@ -161,6 +168,7 @@ export declare const ContentModel: mongoose.Model<{
 }>, {
     title?: string | null;
     link?: string | null;
+    type?: string | null;
     tags: mongoose.Types.ObjectId[];
     userId: mongoose.Types.ObjectId;
 } & {
