@@ -1,4 +1,6 @@
+import { OpenIcon } from "../icons/OpenIcon";
 import { ShareIcon } from "../icons/ShareIcon";
+import { YoutubeIcon } from "../icons/YoutubeIcon";
 
 
 interface CardProps {
@@ -29,8 +31,8 @@ export function Card({ title, type, link }: CardProps) {
 
         <div className="flex justify-between">
           <div className="flex items-center text-md">
-            <div className="text-gray-500 pr-4">
-              <ShareIcon size="md" />
+            <div className="text-gray-500 pr-2">
+              <YoutubeIcon size="md" />
             </div>
             {title}
           </div>
@@ -38,7 +40,7 @@ export function Card({ title, type, link }: CardProps) {
           <div className="flex items-center">
             <div className="pr-2 text-gray-500">
               <a href={link} target="_blank">
-                <ShareIcon size="md" />
+                <OpenIcon size="md" />
               </a>
             </div>
             <div className="text-gray-500">
