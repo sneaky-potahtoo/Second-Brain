@@ -6,6 +6,7 @@ import { JWT_PASSWORD } from "./config.js";
 import { userMiddleware } from "./middleware.js";
 import { random } from "./utils.js";
 import cors from "cors";
+import { PORT } from "./config.js";
 
 const app = express();
 
@@ -167,4 +168,6 @@ app.get("/api/v1/brain/:shareLink", async (req, res) => {
   });
 });
 
-app.listen(3000);
+app.listen(PORT, () => {
+  console.log(`Backend listening on port ${PORT}`);
+});
