@@ -1,8 +1,7 @@
 import mongoose, { model, Schema } from "mongoose";
+import { MONGODB_URI } from "./config.js";
 
-mongoose.connect(
-  "mongodb+srv://Monke_G:fS!s7v!6Ld3.XaE@cluster0.gocdjty.mongodb.net/secondbrain"
-);
+mongoose.connect(MONGODB_URI);
 const UserSchema = new Schema({
   username: { type: String, unique: true },
   password: String,
